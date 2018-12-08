@@ -1,0 +1,21 @@
+import Login from "@/views/Login";
+import Register from "@/views/Register";
+import Home from "@/views/Home";
+import UserInfo from "@/views/userInfo";
+import Contact from "@/views/Contact";
+import ListDetail from "@/views/ListDetail";
+import IndexList from "@/views/IndexList";
+import ListPage from "@/views/ListPage";
+import Setting from "@/views/Setting";
+
+export {
+  Login,
+  Register,
+  Home,
+  UserInfo,
+  Contact,
+  IndexList,
+  ListPage,
+  ListDetail,
+  Setting
+}
