@@ -1,5 +1,7 @@
 import 'normalize.css/normalize.css'// CSS resets
 import '@/styles/App.scss';
+import "@/static/font/iconfont.css";
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'

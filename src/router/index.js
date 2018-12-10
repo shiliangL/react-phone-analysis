@@ -12,7 +12,9 @@ class RoutePage extends Component {
         <div className="RoutePage">
           <AuthRoute />
           <Switch>
-            <Route component={Home} />
+            <Route component={Home} >
+              {/* <Route component={Home} /> */}
+            </Route>
             <Route exact path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/setting" component={Setting} />

@@ -23,16 +23,18 @@ class NavTabBar extends Component {
               return <TabBar.Item
                 unselectedTintColor="#949494"
                 tintColor="#00c2b3"
-                icon={<div style={{
+                icon={<div 
+                  className={ item.class }
+                  style={{
                   width: '22px',
                   height: '22px',
-                  background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
                 }} />
                 }
-                selectedIcon={<div style={{
+                selectedIcon={<div 
+                  className={item.selectedClass }
+                  style={{
                   width: '22px',
                   height: '22px',
-                  background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
                 }}
                 />
                 }
