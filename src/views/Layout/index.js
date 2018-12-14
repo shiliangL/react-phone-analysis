@@ -27,7 +27,7 @@ class Layout extends Component {
     const { location } = this.props;
     const navLists = [
       {
-        title: "首页",
+        title: "首页修改了",
         path: "/index",
         icon: "",
         class: "iconfont icon-shouye",
