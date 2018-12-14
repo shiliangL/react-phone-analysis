@@ -1,6 +1,6 @@
 import Login from "@/views/Login";
 import Register from "@/views/Register";
-import Home from "@/views/Home";
+import Layout from "@/views/Layout";
 import UserInfo from "@/views/userInfo";
 import Contact from "@/views/Contact";
 import ListDetail from "@/views/ListDetail";
@@ -11,7 +11,7 @@ import Setting from "@/views/Setting";
 export {
   Login,
   Register,
-  Home,
+  Layout,
   UserInfo,
   Contact,
   IndexList,

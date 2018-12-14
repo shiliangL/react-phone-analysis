@@ -13,7 +13,7 @@ export default class IndexList extends Component {
   componentDidMount() {
     const imgs = getImgData();
     const dataList = [
-      { icon: imgs[0], title:'热销分类', to:'/' },
+      { icon: imgs[0], title: '热销分类', to:'/hotClass' },
       { icon: imgs[1], title:'销售排行', to:'' },
       { icon: imgs[2], title:'销售分类', to:'' },
       { icon: imgs[3], title:'销售占比', to:'' },
