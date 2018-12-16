@@ -7,7 +7,7 @@ class AppTopBar extends Component {
 
 
   render() {
-    const { title = "初始值", mode = "dark", history } = this.props;
+    const { title = "初始值+1", mode = "dark", history } = this.props;
 
     return (
       <NavBar
