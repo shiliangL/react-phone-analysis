@@ -7,6 +7,7 @@ import ListDetail from "@/views/ListDetail";
 import IndexList from "@/views/IndexList";
 import ListPage from "@/views/ListPage";
 import Setting from "@/views/Setting";
+import AppContent from "@/views/AppContent";
 
 export {
   Login,
@@ -17,5 +18,6 @@ export {
   IndexList,
   ListPage,
   ListDetail,
+  AppContent,
   Setting
 }

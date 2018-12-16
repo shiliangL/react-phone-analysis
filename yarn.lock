@@ -13,6 +13,45 @@
   version "1.1.15"
   resolved "http://registry.npm.taobao.org/@ant-design/icons/download/@ant-design/icons-1.1.15.tgz#2ff689b87bb160c246a07adaa99cdb1c8dfd4412"
 
+"@antv/adjust@~0.0.3":
+  version "0.0.7"
+  resolved "http://registry.npm.taobao.org/@antv/adjust/download/@antv/adjust-0.0.7.tgz#01e83c36b28c50eecb98fad9dc662176b4036ab7"
+  dependencies:
+    "@antv/util" "~1.2.5"
+
+"@antv/attr@~0.0.3":
+  version "0.0.7"
+  resolved "http://registry.npm.taobao.org/@antv/attr/download/@antv/attr-0.0.7.tgz#333f252ce35fc3efdf8ad48046c263a6be2d7d04"
+  dependencies:
+    "@antv/util" "~1.2.5"
+
+"@antv/f2@^3.3.1":
+  version "3.3.1"
+  resolved "http://registry.npm.taobao.org/@antv/f2/download/@antv/f2-3.3.1.tgz#17ef9e6d9e7d7f8445becddb552649bc122473e4"
+  dependencies:
+    "@antv/adjust" "~0.0.3"
+    "@antv/attr" "~0.0.3"
+    "@antv/scale" "~0.0.6"
+    "@antv/util" "~1.2.5"
+    hammerjs "^2.0.8"
+
+"@antv/gl-matrix@^2.7.1":
+  version "2.7.1"
+  resolved "http://registry.npm.taobao.org/@antv/gl-matrix/download/@antv/gl-matrix-2.7.1.tgz#acb8e37f7ab3df01345aba4372d7942be42eba14"
+
+"@antv/scale@~0.0.6":
+  version "0.0.9"
+  resolved "http://registry.npm.taobao.org/@antv/scale/download/@antv/scale-0.0.9.tgz#24a96d3c3a4a507315a9a335e5a435be4d6ccd45"
+  dependencies:
+    "@antv/util" "~1.2.5"
+    fecha "~2.3.3"
+
+"@antv/util@~1.2.5":
+  version "1.2.5"
+  resolved "http://registry.npm.taobao.org/@antv/util/download/@antv/util-1.2.5.tgz#8896c5055ec29e4a344b5daa97bf82905f7d40cd"
+  dependencies:
+    "@antv/gl-matrix" "^2.7.1"
+
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0"
   resolved "http://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -3930,6 +3969,10 @@ fbjs@^0.8.0, fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.3, fbjs@^0.8.9:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
+
+fecha@~2.3.3:
+  version "2.3.3"
+  resolved "http://registry.npm.taobao.org/fecha/download/fecha-2.3.3.tgz#948e74157df1a32fd1b12c3a3c3cdcb6ec9d96cd"
 
 figgy-pudding@^3.1.0, figgy-pudding@^3.5.1:
   version "3.5.1"

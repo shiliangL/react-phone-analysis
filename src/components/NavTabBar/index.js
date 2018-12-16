@@ -6,14 +6,9 @@ import { withRouter } from "react-router-dom";
 @withRouter
 class NavTabBar extends Component {
 
-  // static PropTypes = {
-  //   data: PropTypes.array.isRequired
-  // }
-
   render() {
 
-    const { data } = this.props
-    const { location } = this.props
+    const { data, onClick, location } = this.props
 
     return (
       <div className="fixed-bottom">
@@ -39,7 +34,7 @@ class NavTabBar extends Component {
                 />
                 }
                 onPress={() => {
-                  this.props.history.push(item.path)
+                  onClick(item);
                 }}
                 selected={item.path === location.pathname}
                 title={item.title}

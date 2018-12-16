@@ -23,3 +23,4 @@ export const setLoginStatus = isLogin => {
 
 #### react-router4
 Switch 只渲染命中的第一个路由
+路由设计的时候需要考虑路由匹配顺序/原则

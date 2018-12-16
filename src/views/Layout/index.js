@@ -64,9 +64,8 @@ class Layout extends Component {
       }
     ];
 
-    return (
-      <div style={{ height: "100%" }}>
-        <NavBar
+    return <div style={{ height: "100%" }}>
+        {/* <NavBar
           mode="dark"
           rightContent={
             location.pathname === "/my"
@@ -79,26 +78,20 @@ class Layout extends Component {
             : navLists.find(item => item.path === location.pathname)
             ? navLists.find(item => item.path === location.pathname).title
             : null}
-        </NavBar>
+        </NavBar> */}
+
+        <NavBar mode="dark" />
 
         <div className="route-content" style={{ marginTop: "" }}>
           <Switch>
-            {location.pathname === '/' ? <Redirect to='/index' /> : null}
+            {/* {location.pathname === "/" ? <Redirect to="/index" /> : null} */}
             {navLists.map(item => {
-              return (
-                <Route
-                  key={item.path}
-                  path={`${item.path}`}
-                  component={item.component}
-                />
-              );
+              return <Route key={item.path} path={`${item.path}`} component={item.component} />;
             })}
-
           </Switch>
         </div>
         <NavTabBar data={navLists} />
-      </div>
-    );
+      </div>;
   }
 }
 
