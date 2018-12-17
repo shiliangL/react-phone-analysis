@@ -1,14 +1,7 @@
-import React, { Component } from "react";
-import { ListView } from "antd-mobile";
 
-function MyBody(props) {
-  return (
-    <div className="am-list-body my-body">
-      <span style={{ display: 'none' }}>you can custom body wrap element</span>
-      {props.children}
-    </div>
-  );
-}
+import React, { Component } from "react";
+import { ListView } from 'antd-mobile';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 const data = [
   {
@@ -27,6 +20,7 @@ const data = [
     des: '不是所有的兼职汪都需要风吹日晒',
   },
 ];
+
 const NUM_SECTIONS = 5;
 const NUM_ROWS_PER_SECTION = 5;
 let pageIndex = 0;
@@ -53,8 +47,7 @@ function genData(pIndex = 0) {
   rowIDs = [...rowIDs];
 }
 
-export default class ListPage extends Component{
-  
+export default class ListPage extends Component {
   constructor(props) {
     super(props);
     const getSectionData = (dataBlob, sectionID) => dataBlob[sectionID];
@@ -70,7 +63,6 @@ export default class ListPage extends Component{
     this.state = {
       dataSource,
       isLoading: true,
-      height: document.documentElement.clientHeight * 3 / 4,
     };
   }
 
@@ -78,14 +70,12 @@ export default class ListPage extends Component{
     // you can scroll to the specified position
     // setTimeout(() => this.lv.scrollTo(0, 120), 800);
 
-    const hei = document.documentElement.clientHeight - 0;
     // simulate initial Ajax
     setTimeout(() => {
       genData();
       this.setState({
         dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlobs, sectionIDs, rowIDs),
         isLoading: false,
-        height: hei,
       });
     }, 600);
   }
@@ -129,7 +119,6 @@ export default class ListPage extends Component{
       />
     );
     let index = data.length - 1;
-
     const row = (rowData, sectionID, rowID) => {
       if (index < 0) {
         index = data.length - 1;
@@ -137,7 +126,14 @@ export default class ListPage extends Component{
       const obj = data[index--];
       return (
         <div key={rowID} style={{ padding: '0 15px' }}>
-          <div style={{ lineHeight: '50px', color: '#888', fontSize: 18, borderBottom: '1px solid #F6F6F6'}}>{obj.title}</div>
+          <div
+            style={{
+              lineHeight: '50px',
+              color: '#888',
+              fontSize: 18,
+              borderBottom: '1px solid #F6F6F6',
+            }}
+          >{obj.title}</div>
           <div style={{ display: '-webkit-box', display: 'flex', padding: '15px 0' }}>
             <img style={{ height: '64px', marginRight: '15px' }} src={obj.img} alt="" />
             <div style={{ lineHeight: 1 }}>
@@ -153,26 +149,46 @@ export default class ListPage extends Component{
       <ListView
         ref={el => this.lv = el}
         dataSource={this.state.dataSource}
+        className="am-list sticky-list"
+        useBodyScroll
+        renderSectionWrapper={sectionID => (
+          <StickyContainer
+            key={`s_${sectionID}_c`}
+            className="sticky-container"
+            style={{ zIndex: 4 }}
+          />
+        )}
+        renderSectionHeader={sectionData => (
+          <Sticky>
+            {({
+              style,
+            }) => (
+              <div
+                className="sticky"
+                style={{
+                  ...style,
+                  zIndex: 3,
+                  backgroundColor: parseInt(sectionData.replace('Section ', ''), 10) % 2 ?
+                    '#5890ff' : '#F8591A',
+                  color: 'white',
+                }}
+              >{`Task ${sectionData.split(' ')[1]}`}</div>
+            )}
+          </Sticky>
+        )}
         renderHeader={() => <span>header</span>}
         renderFooter={() => (<div style={{ padding: 30, textAlign: 'center' }}>
           {this.state.isLoading ? 'Loading...' : 'Loaded'}
         </div>)}
-        renderSectionHeader={sectionData => (
-          <div>{`Task ${sectionData.split(' ')[1]}`}</div>
-        )}
-        renderBodyComponent={() => <MyBody />}
         renderRow={row}
         renderSeparator={separator}
-        style={{
-          height: this.state.height,
-          overflow: 'auto',
-        }}
         pageSize={4}
         onScroll={() => { console.log('scroll'); }}
-        scrollRenderAheadDistance={500}
+        scrollEventThrottle={200}
         onEndReached={this.onEndReached}
         onEndReachedThreshold={10}
       />
     );
   }
 }
+
